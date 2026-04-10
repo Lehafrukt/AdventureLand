@@ -13,9 +13,19 @@ function start(){
     use_skill("use_hp")();
     }
 	loot();
-    if (locate_item("hpot1") == -1){
-        smart_move
+
+    if (locate_item("hpot1") == -1) {
+        targetpots = find_npc("pots");
+		smart_move(targetpots);
+		trade_buy(targetpots, "hpot1", 100);
     }
+
+	if (locate_item("mpot1") == -1) {
+        targetpots = find_npc("pots");
+		smart_move(targetpots);
+		trade_buy(targetpots, "mpot1", 100);
+    }
+
 
 	var target=get_targeted_monster();
 	if(!target)
