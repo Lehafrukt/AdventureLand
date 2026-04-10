@@ -6,8 +6,12 @@ function start(){
 	
 
 	if(character.rip || is_moving(character)) return;
-    use_hp_or_mp();
-    
+    if (character.mp < max(character.max_mp - 300, 20)) {
+    use_skill("use_mp")();
+    }
+    if (character.hp < character.max_hp - 400) {
+    use_skill("use_hp")();
+    }
 	loot();
     if (locate_item("hpot1") == -1){
         smart_move
