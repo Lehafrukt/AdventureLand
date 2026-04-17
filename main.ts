@@ -1,3 +1,4 @@
+import { waitForDebugger } from "node:inspector";
 import { MonsterEntity, MonsterKey } from "typed-adventureland";
 
 setInterval(start, 1000 / 4); // Loops every 1/4 seconds.
@@ -101,7 +102,6 @@ function item_merge() {
 let debug_step = 0; // Step counter for debug logs
 function debug_log() {
 	game_log(debug_step);
-	debug_step++;
+	debug_step++
 	// Implementation for debug logging based on the step parameter
 }
-
